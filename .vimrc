@@ -1,5 +1,7 @@
 set nocompatible
 
+filetype plugin indent on
+
 "calling pathogen to load all the plugins from the bundle directory
 call pathogen#runtime_append_all_bundles() 
 call pathogen#helptags()
@@ -9,9 +11,6 @@ runtime! macros/matchit.vim
 
 "Color scheme
 colorscheme railscasts
-
-"Foldings
-set foldmethod=syntax
 
 "Vim custom settings
 set ignorecase
