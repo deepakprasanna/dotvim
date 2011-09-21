@@ -18,6 +18,7 @@ set ts=2
 set sw=2
 set expandtab
 set smarttab
+set guifont=Monaco\ 9
 
 "Line numbers
 set number
@@ -37,3 +38,7 @@ vmap <C-C> "+y
 vmap <C-X> "+x
 imap <C-V> <SPACE><ESC>"+gPi
 set wildmenu wildmode=full 
+
+"set filetype=coffee for .coffee files
+au BufRead,BufNewFile *.coffee set filetype=coffee
+au BufRead,BufNewFile *.hamljs set filetype=haml
