@@ -10,7 +10,7 @@ call pathogen#helptags()
 runtime! macros/matchit.vim
 
 "Color scheme
-colorscheme railscasts
+colorscheme darkspectrum 
 
 "Vim custom settings
 set ignorecase
@@ -24,6 +24,8 @@ set guifont=Monaco\ 9
 set number
 set numberwidth=3
 set nowrap
+set ruler 
+set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) "a ruler on steroids
 
 " autocmd setting
 if has("autocmd")
@@ -42,3 +44,4 @@ set wildmenu wildmode=full
 "set filetype=coffee for .coffee files
 au BufRead,BufNewFile *.coffee set filetype=coffee
 au BufRead,BufNewFile *.hamljs set filetype=haml
+au BufRead,BufNewFile *.scss set filetype=css
