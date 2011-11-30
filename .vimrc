@@ -48,3 +48,20 @@ au BufRead,BufNewFile *.scss set filetype=css
 
 "ack-grep
 let g:ackprg="ack-grep -H --nocolor --nogroup --column" 
+
+"nerdtree toggle
+map <F2> :NERDTreeToggle<CR> 
+
+"tabman
+let g:tabman_toggle = '<F3>'
+let g:tabman_focus  = '<F3>f'
+
+"coffeecompile
+vmap <leader>c <esc>:'<,'>:CoffeeCompile<CR>
+map <leader>c :CoffeeCompile<CR> 
+
+" Tab Navigation with Ctrl+Tab
+nmap <C-Tab> :tabnext<CR>
+nmap <C-S-Tab> :tabprev<CR>
+nmap <silent> <C-S-Left> :exe 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nmap <silent> <C-S-Right> :exe 'silent! tabmove ' . tabpagenr()<CR> 
