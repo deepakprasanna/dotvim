@@ -44,6 +44,7 @@ set wildmenu wildmode=full
 "set filetype=coffee for .coffee files
 au BufRead,BufNewFile *.coffee set filetype=coffee
 au BufRead,BufNewFile *.hamljs set filetype=haml
+au BufRead,BufNewFile *.hamlc set filetype=haml
 au BufRead,BufNewFile *.scss set filetype=css
 
 "ack-grep
