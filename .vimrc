@@ -1,5 +1,7 @@
 set nocompatible
+set mouse = ""
 
+syntax on
 filetype plugin indent on
 
 "calling pathogen to load all the plugins from the bundle directory
@@ -18,7 +20,6 @@ set ts=2
 set sw=2
 set expandtab
 set smarttab
-set guifont=Monaco\ 9
 
 "Line numbers
 set number
@@ -46,12 +47,15 @@ au BufRead,BufNewFile *.coffee set filetype=coffee
 au BufRead,BufNewFile *.hamljs set filetype=haml
 au BufRead,BufNewFile *.hamlc set filetype=haml
 au BufRead,BufNewFile *.scss set filetype=css
+au BufRead,BufNewFile *.scala set filetype=scala
+au BufRead,BufNewFile *.clj set filetype=clojure
+au BufRead,BufNewFile *.cljs set filetype=clojure
 
 "ack-grep
-let g:ackprg="ack-grep -H --nocolor --nogroup --column" 
+let g:ackprg="ack -H --nocolor --nogroup --column --ignore-dir=.gems" 
 
 "nerdtree toggle
-map <F2> :NERDTreeToggle<CR> 
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 "tabman
 let g:tabman_toggle = '<F3>'
@@ -66,3 +70,46 @@ nmap <C-Tab> :tabnext<CR>
 nmap <C-S-Tab> :tabprev<CR>
 nmap <silent> <C-S-Left> :exe 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nmap <silent> <C-S-Right> :exe 'silent! tabmove ' . tabpagenr()<CR> 
+
+" Vim native code completion
+set omnifunc=syntaxcomplete#Complete
+
+"Rainbow paren always on
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+" Disable Arrow keys in Escape mode
+
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" Disable Arrow keys in Insert mode
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
+" Jumping between buffers
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" insert new line and goto insert more one line above the current line
+map <M-o> m`O<ESC>``
+
+"relative numbering
+function! NumberToggle()
+ if(&relativenumber == 1)
+   set norelativenumber
+   set number
+ else
+   set relativenumber
+ endif
+endfunc
+
+nnoremap <leader><leader>r :call NumberToggle()<cr>
