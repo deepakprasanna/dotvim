@@ -8,6 +8,8 @@ filetype plugin indent on
 call pathogen#runtime_append_all_bundles() 
 call pathogen#helptags()
 
+set vb t_vb= "Be silent dude
+
 "Adding runtimes
 runtime! macros/matchit.vim
 
@@ -20,6 +22,7 @@ set ts=2
 set sw=2
 set expandtab
 set smarttab
+set list
 
 "Line numbers
 set number
@@ -113,3 +116,9 @@ function! NumberToggle()
 endfunc
 
 nnoremap <leader><leader>r :call NumberToggle()<cr>
+
+" Persistant UNDO
+set undofile                " Save undo's after file closes
+set undodir=$HOME/.vim/undo " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo

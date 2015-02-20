@@ -72,7 +72,19 @@
 	url = https://github.com/terryma/vim-multiple-cursors
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
-	url = https://github.com/Raimondi/delimitMate
+	url = git@github.com:Raimondi/delimitMate.git
 [submodule "bundle/ZoomWin"]
 	path = bundle/ZoomWin
 	url = git@github.com:vim-scripts/ZoomWin.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "bundle/rainbow-parentheses"]
+	path = bundle/rainbow-parentheses
+	url = git@github.com:kien/rainbow_parentheses.vim.git
+[submodule "bundle/vim-commentary"]
+	path = bundle/vim-commentary
+	url = git@github.com:tpope/vim-commentary.git
+[submodule "bundle/emmet-vim"]
+	path = bundle/emmet-vim
+	url = git@github.com:mattn/emmet-vim.git
